@@ -4,7 +4,7 @@
 - Download reference genome and annotation(GTF) from ensembl;
 - Examined the reference genome using 1_ref_inspection.py (the presence of mitochondrial sequences and UTR coverage);
 - Install fastq
-  - Get SRR list (Accession List) from NCBI
+  - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
   - download .sra file using Accession List & transfer .sra to .fastq
     ```bash
     
