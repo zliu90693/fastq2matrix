@@ -2,10 +2,12 @@
 
 ## Zhang_iScience_2022_Amel
 - Download reference genome and annotation(GTF) from ensembl;
-- Examined the reference genome using 1_ref_inspection.py (the presence of mitochondrial sequences and UTR coverage);
-- Install fastq
+- Examined the reference genome 
+  - using 1_ref_inspection.py (the presence of mitochondrial sequences and UTR coverage);
+  - 
+- Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
-  - download .sra file using Accession List & transfer .sra to .fastq
+  - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
     ```bash
     
     ```
