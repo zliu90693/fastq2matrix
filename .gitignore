@@ -1,0 +1,6 @@
+*.fastq
+*.h5ad
+*.fna
+*.gff
+*.gtf
+*.gz
