@@ -1,0 +1,12 @@
+**Note: To run the bash scripts in this .md file, you need to download the Markdown Execute plugin.**
+
+## Zhang_iScience_2022_Amel
+- Download reference genome and annotation(GTF) from ensembl;
+- Examined the reference genome using 1_ref_inspection.py (the presence of mitochondrial sequences and UTR coverage);
+- Install fastq
+  - Get SRR list (Accession List) from NCBI
+  - download .sra file using Accession List & transfer .sra to .fastq
+    ```bash
+    
+    ```
+- Next, we will use 2_get_fastq.md (need the Markdown Execute plugin) to download FastQ via the SRR list.
