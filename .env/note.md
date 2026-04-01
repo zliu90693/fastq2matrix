@@ -1,0 +1,1 @@
+kingfisher, fastq2matrix的conda环境, 用yml格式存储.
