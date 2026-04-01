@@ -4,17 +4,18 @@
 
 set -euo pipefail
 
-storage_path=/data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Zhang_iScience_2022_Amel # Please modify this path according to your needs.
+storage_path=/data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq # Please modify this path according to your needs.
+threads=8
 
 project_name=""
 
-while getopts "p:o:v:" opt; do
+while getopts "p:t:v:" opt; do
     case $opt in
         p)
             project_name=$OPTARG
             ;;
-        o)
-            output_file=$OPTARG
+        t)
+            threads=$OPTARG
             ;;
         v)
             verbose=true
@@ -35,6 +36,11 @@ if [ -z "$project_name" ]; then
     exit 1
 fi
 
+if ! [[ "$threads" =~ ^[0-9]+$ ]]; then
+    echo "Error: -t must be a positive integer."
+    exit 1
+fi
+
 if ! command -v prefetch >/dev/null 2>&1; then
     echo "Error: prefetch command not found."
     echo "Activate the kingfisher conda environment first."
@@ -48,8 +54,8 @@ if ! command -v fasterq-dump >/dev/null 2>&1; then
 fi
 
 project_dir="./${project_name}"
-metadata_dir="${project_dir}/metadata"
-srr_list="${metadata_dir}/SRR_list"
+metadata_dir="./${project_dir}/metadata"
+srr_list="./${metadata_dir}/SRR_list"
 prefetch_dir="${storage_path}/${project_name}/.prefetch"
 
 ########################################
@@ -101,4 +107,15 @@ mkdir -p "$prefetch_dir"
 
 prefetch --output-directory "$prefetch_dir" --option-file "$srr_list"
 echo "Prefetch completed successfully."
+
+########################################
+# Run Fasterq-Dump
+########################################
+
+xargs -a "$srr_list" -I {} fasterq-dump "${prefetch_dir}/{}/{}.sralite" \
+    --split-files \
+    --include-technical \
+    --threads "$threads" \
+    --outdir "${storage_path}/${project_name}" \
+    --temp "${storage_path}/${project_name}/tmp"
 

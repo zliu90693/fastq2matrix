@@ -9,4 +9,4 @@
     ```bash
     
     ```
-- Next, we will use 2_get_fastq.md (need the Markdown Execute plugin) to download FastQ via the SRR list.
+- 
