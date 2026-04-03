@@ -41,11 +41,11 @@ if ! [[ "$threads" =~ ^[0-9]+$ ]]; then
     exit 1
 fi
 
-if ! command -v prefetch >/dev/null 2>&1; then
-    echo "Error: prefetch command not found."
-    echo "Activate the kingfisher conda environment first."
-    exit 1
-fi
+# if ! command -v prefetch >/dev/null 2>&1; then
+#     echo "Error: prefetch command not found."
+#     echo "Activate the kingfisher conda environment first."
+#     exit 1
+# fi
 
 if ! command -v fasterq-dump >/dev/null 2>&1; then
     echo "Error: fasterq-dump command not found."
@@ -56,7 +56,7 @@ fi
 project_dir="./${project_name}"
 metadata_dir="./${project_dir}/metadata"
 srr_list="./${metadata_dir}/SRR_list"
-prefetch_dir="${storage_path}/${project_name}/.prefetch"
+fastq_dir="${storage_path}/${project_name}"
 
 ########################################
 # Directory / file checks
@@ -99,23 +99,16 @@ fi
 # Create output directory safely
 ########################################
 
-mkdir -p "$prefetch_dir"
-
-########################################
-# Run Prefetch
-########################################
-
-prefetch --output-directory "$prefetch_dir" --option-file "$srr_list"
-echo "Prefetch completed successfully."
+mkdir -p "$fastq_dir"
 
 ########################################
 # Run Fasterq-Dump
 ########################################
 
-xargs -a "$srr_list" -I {} fasterq-dump "${prefetch_dir}/{}/{}.sralite" \
+xargs -a "$srr_list" -I {} fasterq-dump \
     --split-files \
     --include-technical \
     --threads "$threads" \
-    --outdir "${storage_path}/${project_name}" \
-    --temp "${storage_path}/${project_name}/tmp"
+    --outdir "$fastq_dir" \
+    --temp "${fastq_dir}/tmp"
 
