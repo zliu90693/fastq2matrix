@@ -9,16 +9,18 @@ aria2c_j=10
 aria2c_x=5
 aria2c_s=5
 threads=8
+pigz_threads=16
 
 project_name=""
 
-while getopts "p:j:x:s:t:" opt; do
+while getopts "p:j:x:s:t:z:" opt; do
     case $opt in
         p) project_name=$OPTARG ;;
         j) aria2c_j=$OPTARG ;;
         x) aria2c_x=$OPTARG ;;
         s) aria2c_s=$OPTARG ;;
         t) threads=$OPTARG ;;
+        z) pigz_threads=$OPTARG ;;
         \?)
             echo "Invalid option: -$OPTARG" >&2
             exit 1
@@ -52,6 +54,11 @@ fi
 
 if ! [[ "$threads" =~ ^[0-9]+$ ]]; then
     echo "Error: -t must be a positive integer."
+    exit 1
+fi
+
+if ! [[ "$pigz_threads" =~ ^[0-9]+$ ]]; then
+    echo "Error: -z must be a positive integer."
     exit 1
 fi
 
@@ -121,7 +128,7 @@ fi
 # Create output directory safely
 ########################################
 
-# mkdir -p "$sra_dir"
+mkdir -p "$sra_dir"
 
 ########################################
 # Get sra file path
@@ -149,7 +156,10 @@ for SRR in $(cat "$srr_list"); do
         --outdir "${fastq_dir}/${SRR}" \
         --temp "${fastq_dir}/.tmp/${SRR}" \
         --progress
-    pigz -p 8 "${fastq_dir}/${SRR}/"*.fastq # warning! * not in ""
+
+    wait # Wait for the previous pigz to finish before starting the new one.
+    pigz -p "$pigz_threads" "${fastq_dir}/${SRR}/"*.fastq &
+    
+    rm -rf "${fastq_dir}/.tmp/${SRR}"
 done
-
-
+wait
