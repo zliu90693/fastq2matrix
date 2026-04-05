@@ -1,5 +1,6 @@
 name: kingfisher
 channels:
+  - rpetit3
   - conda-forge
   - bioconda
   - defaults
@@ -9,6 +10,7 @@ dependencies:
   - _python_abi3_support=1.0=hd8ed1ab_2
   - argparse-manpage-birdtools=1.7.0=pyhd8ed1ab_1
   - aria2=1.37.0=hbc8128a_2
+  - aspera-connect=3.9.6=0
   - asttokens=3.0.0=pyhd8ed1ab_1
   - aws-c-auth=0.8.7=h7743f02_1
   - aws-c-cal=0.8.7=h7d555fd_1
@@ -34,8 +36,8 @@ dependencies:
   - brotli-python=1.1.0=py313h46c70d0_2
   - bzip2=1.0.8=h4bc722e_7
   - c-ares=1.34.5=hb9d3cd8_0
-  - ca-certificates=2025.10.5=hbd8a1cb_0
-  - certifi=2025.10.5=pyhd8ed1ab_0
+  - ca-certificates=2026.2.25=hbd8a1cb_0
+  - certifi=2026.2.25=pyhd8ed1ab_0
   - cffi=1.17.1=py313hfab6e84_0
   - charset-normalizer=3.4.1=pyhd8ed1ab_0
   - colorama=0.4.6=pyhd8ed1ab_1
@@ -62,6 +64,7 @@ dependencies:
   - jupyter_client=8.6.3=pyhd8ed1ab_1
   - jupyter_core=5.9.1=pyhc90fa1f_0
   - keyutils=1.6.1=h166bdaf_0
+  - kingfisher=0.4.1=pyh7cba7a3_0
   - krb5=1.21.3=h659f571_0
   - ld_impl_linux-64=2.43=h712a8e2_4
   - libabseil=20250127.1=cxx17_hbbce691_0
@@ -120,7 +123,7 @@ dependencies:
   - nest-asyncio=1.6.0=pyhd8ed1ab_1
   - nlohmann_json=3.11.3=he02047a_1
   - numpy=2.2.4=py313h17eae1a_0
-  - openssl=3.5.4=h26f9b46_0
+  - openssl=3.6.1=h35e630c_1
   - orc=2.1.1=h17f744e_1
   - ossuuid=1.6.2=h5888daf_1001
   - packaging=24.2=pyhd8ed1ab_2

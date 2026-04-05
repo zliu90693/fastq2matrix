@@ -157,9 +157,14 @@ for SRR in $(cat "$srr_list"); do
         --temp "${fastq_dir}/.tmp/${SRR}" \
         --progress
 
-    wait # Wait for the previous pigz to finish before starting the new one.
-    pigz -p "$pigz_threads" "${fastq_dir}/${SRR}/"*.fastq &
+    wait
+    pigz -p "$pigz_threads" "${fastq_dir}/${SRR}/"*.fastq &  # Wait for the previous pigz to finish before starting the new one.
     
     rm -rf "${fastq_dir}/.tmp/${SRR}"
+    rm "${sra_dir}/${SRR}.lite.1"
 done
 wait
+
+for dir in "${fastq_dir}/"*; do    
+    ln -s "${dir}" "./${project_dir}/fastq/$(basename $dir)" 
+done
