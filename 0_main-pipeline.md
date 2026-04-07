@@ -5,7 +5,7 @@
 
 - Check reference genome using ref-inspection.ipynb
   - mitochondrial sequences exist? Yes
-  - the CDS and exon start sites are different? 
+  - the CDS and exon start sites are different? Yes
 
 - Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
@@ -13,4 +13,6 @@
     ```bash
     ./1_get-fastq.sh -p Zhang_iScience_2022_Amel -j 12 -x 5 -s 5 -t 8 -z 20
     ```
-- distinguish R1 and R2
+- Make index to the ref using 
+
+- Distinguish R1 and R2

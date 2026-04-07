@@ -8,3 +8,4 @@
 *.tsv
 *.jar
 SRR*
+*_out/

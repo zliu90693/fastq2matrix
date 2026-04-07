@@ -5,13 +5,13 @@
 set -euo pipefail
 
 storage_path=/data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq # Please modify this path according to your needs.
+project_name=""
 aria2c_j=10
 aria2c_x=5
 aria2c_s=5
 threads=8
 pigz_threads=16
 
-project_name=""
 
 while getopts "p:j:x:s:t:z:" opt; do
     case $opt in
@@ -134,13 +134,13 @@ mkdir -p "$sra_dir"
 # Get sra file path
 ########################################
 
-# cat "$srr_list" | xargs -I {} srapath {} > "$sra_path_list"
+cat "$srr_list" | xargs -I {} srapath {} > "$sra_path_list"
 
 ########################################
 # Get sra file
 ########################################
 
-# aria2c -i "$sra_path_list" -d "$sra_dir" -j $aria2c_j -x $aria2c_x -s $aria2c_s
+aria2c -i "$sra_path_list" -d "$sra_dir" -j $aria2c_j -x $aria2c_x -s $aria2c_s
 
 ########################################
 # Run Fasterq-Dump
