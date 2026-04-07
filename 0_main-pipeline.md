@@ -13,6 +13,11 @@
     ```bash
     ./1_get-fastq.sh -p Zhang_iScience_2022_Amel -j 12 -x 5 -s 5 -t 8 -z 20
     ```
-- Make index to the ref using 
+- Make index to ref data
+  ```bash
+  ./2_make-ref.sh -p Zhang_iScience_2022_Amel -g Apis_mellifera.Amel_HAv3.1.62.gtf -f Apis_mellifera.Amel_HAv3.1.62.filtered.gtf -r Apis_mellifera.Amel_HAv3.1.dna.toplevel.fa -m A_mel_mkref_out -t 20
+  ```
 
-- Distinguish R1 and R2
+- Distinguish R1/R2 fastq and rename fastq using check_R1R2_rename.ipynb
+
+- 

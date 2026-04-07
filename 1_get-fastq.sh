@@ -148,7 +148,7 @@ aria2c -i "$sra_path_list" -d "$sra_dir" -j $aria2c_j -x $aria2c_x -s $aria2c_s
 
 
 for SRR in $(cat "$srr_list"); do
-    mkdir -p "${fastq_dir}/${SRR}"
+    mkdir -p "${fastq_dir}/${SRR}" # 之所以新建了一个$SRR目录, 是为了pigz压缩时匹配方便, 因为无法保证不同文章fastq文件一定都是 $SRR*.fastq格式
     fasterq-dump "${sra_dir}/${SRR}.lite.1" \
         --split-files \
         --include-technical \
@@ -165,6 +165,8 @@ for SRR in $(cat "$srr_list"); do
 done
 wait
 
-for dir in "${fastq_dir}/"*; do    
-    ln -s "${dir}" "./${project_dir}/fastq/$(basename $dir)" 
+
+find "$fastq_dir" -type f -name "*.fastq.gz" -print0 \
+| while IFS= read -r -d '' file; do
+    ln -s "$file" "${project_dir}/fastq/$(basename $file)" # 待后续将这些链接依据Samples和lane的关系打包进目录里
 done

@@ -171,4 +171,4 @@ cellranger mkref --nthreads $cellranger_nthreads \
     --genes="$filtered_gtf_name"
 log "STEP 5 ended"
 
-rm "./tmp/*"
+rm -f .tmp/*
