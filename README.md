@@ -1,4 +1,4 @@
-Reference process: https://medium.com/@datirium/the-single-cell-mess-at-ncbi-how-geo-sra-store-10x-genomics-scrna-seq-data-and-how-to-load-them-981b75a87c93
+Reference process: https://bioinformatics-core-shared-training.github.io/UnivCambridge_ScRnaSeq_Nov2021/Markdowns/03_CellRanger.html
 
 To reproduce this project, please follow the workflow in 0_main-pipeline.md.
 

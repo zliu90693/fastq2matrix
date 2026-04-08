@@ -9,3 +9,4 @@
 *.jar
 SRR*
 *_out/
+*-out/

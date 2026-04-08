@@ -19,5 +19,4 @@
   ```
 
 - Distinguish R1/R2 fastq and rename fastq using check_R1R2_rename.ipynb
-
-- 
+- Run Cellranger count using 
