@@ -78,5 +78,5 @@ for dir in ../fastq/*; do
         --sample="$GSM" \
         --transcriptome="../ref/${transcriptome_name}" \
         --create-bam "$create_bam"
-    log "${GSM} processing completed"
+    log "${GSM} processing completed" # single GSM about 4.5 hour
 done
