@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Depends on conda environment: fastq2matrix (see .env/fastq2matrix.xml)
+# Depends on conda environment: fastq2matrix (see .env/fastq2matrix.yml)
 
 set -euo pipefail
 
