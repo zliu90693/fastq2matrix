@@ -28,6 +28,8 @@
   ```
 - Remove ambient RNA using 4_cellbender-removebackground.sh
   ```bash
+  # conda config --set channel_priority flexible
+  # conda env create -y -n cellbender --file .env/cellbender.yml
   conda activate cellbender
   ./4_cellbender-removebackground.sh -p Zhang_iScience_2022_Amel 
   ```
