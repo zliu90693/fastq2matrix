@@ -2,11 +2,9 @@
 
 ## Zhang_iScience_2022_Amel
 - Download reference genome and annotation(GTF) from ensembl
-
 - Check reference genome using ref-inspection.ipynb
   - mitochondrial sequences exist? Yes
   - the CDS and exon start sites are different? Yes
-
 - Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
   - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
@@ -31,5 +29,11 @@
   # conda config --set channel_priority flexible
   # conda env create -y -n cellbender --file .env/cellbender.yml
   conda activate cellbender
-  ./4_cellbender-removebackground.sh -p Zhang_iScience_2022_Amel 
+  ./4_cellbender-removebackground.sh -p Zhang_iScience_2022_Amel -c 20
   ```
+
+## Sheng_SA_2020_Hsal
+- Download reference genome and annotation(GTF) from ensembl
+- Check reference genome using ref-inspection.ipynb
+  - mitochondrial sequences exist? 
+  - the CDS and exon start sites are different? 
