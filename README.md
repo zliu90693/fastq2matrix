@@ -4,7 +4,7 @@ The main steps include:
 - getting fastq; 
 - aligning fastq to the reference genome using CellRanger to generate a UMI counting matrix;
 - removing ambient RNA using CellBender;
-- and removing doublet RNA using scDblfinder.
+- removing doublet using scDblfinder.
 
 To reproduce this project, please follow the workflow in 0_main-pipeline.md.
 
