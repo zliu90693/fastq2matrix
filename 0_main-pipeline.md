@@ -31,6 +31,11 @@
   conda activate cellbender
   ./4_cellbender-removebackground.sh -p Zhang_iScience_2022_Amel -c 20
   ```
+- Remove doublet using 5_remove-doublet and run_scDblFinder.R
+  ```bash
+
+  ```
+
 
 ## Sheng_SA_2020_Hsal
 - Download reference genome and annotation(GTF) from ensembl
