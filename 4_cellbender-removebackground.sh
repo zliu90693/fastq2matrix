@@ -66,6 +66,6 @@ for dir in ./${project_name}/fastq/*; do
     log "start processing ${GSM}"
     cellbender remove-background --cpu-threads "$cpu_threads" \
         --input "./${project_name}/cellranger-count-out/${GSM}/outs/raw_feature_bc_matrix.h5" \
-        --output "./${project_name}/cellbender-out/${GSM}/GSM5590453.h5"
+        --output "./${project_name}/cellbender-out/${GSM}/${GSM}.h5"
     log "${GSM} processing completed"
 done
