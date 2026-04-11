@@ -31,3 +31,17 @@ input_h5="./Zhang_iScience_2022_Amel/cellbender-out/${GSM}/${GSM}_filtered.h5"
 output_h5="./Zhang_iScience_2022_Amel/singlet-out/${GSM}/${GSM}_singlet.h5"
 Rscript --vanilla run_scDblFinder.R $input_h5 $output_h5
 ```
+
+```bash
+GSM="GSM5590457"
+input_h5="./Zhang_iScience_2022_Amel/cellbender-out/${GSM}/${GSM}_filtered.h5"
+output_h5="./Zhang_iScience_2022_Amel/singlet-out/${GSM}/${GSM}_singlet.h5"
+Rscript --vanilla run_scDblFinder.R $input_h5 $output_h5
+```
+
+```bash
+GSM="GSM5590458"
+input_h5="./Zhang_iScience_2022_Amel/cellbender-out/${GSM}/${GSM}_filtered.h5"
+output_h5="./Zhang_iScience_2022_Amel/singlet-out/${GSM}/${GSM}_singlet.h5"
+Rscript --vanilla run_scDblFinder.R $input_h5 $output_h5
+```
