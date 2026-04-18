@@ -40,5 +40,12 @@
 ## Sheng_SA_2020_Hsal
 - Download reference genome and annotation(GTF) from ensembl
 - Check reference genome using ref-inspection.ipynb
-  - mitochondrial sequences exist? 
-  - the CDS and exon start sites are different? 
+  - mitochondrial sequences exist? <mark style="background: #FF5582A6;">Uncertain</mark>
+  - the CDS and exon start sites are different? <mark style="background: #FF5582A6;">Uncertain</mark>
+- Install fastq using 1_get-fastq.sh
+  - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
+  - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
+    ```bash
+    conda activate kingfisher
+    ./1_get-fastq.sh -p Sheng_SA_2020_Hsal -j 12 -x 5 -s 5 -t 8 -z 20
+    ```

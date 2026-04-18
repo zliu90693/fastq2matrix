@@ -11,3 +11,4 @@ SRR*
 *_out/
 *-out/
 *.tmp
+label_h5ad_mito.ipynb
