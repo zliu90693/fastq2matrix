@@ -1,0 +1,146 @@
+{
+    "GSM4013391": {
+        "accession": "GSM4013391",
+        "platform": {
+            "accession": "GPL22089",
+            "title": "Illumina NextSeq 500 (Harpegnathos saltator)"
+        },
+        "samples": {
+            "SRS5226318": {
+                "accession": "SRS5226318",
+                "title": "Day 30 transition - gamergate - rep3",
+                "organism": "Harpegnathos saltator",
+                "attributes": {
+                    "treatment": "none",
+                    "INSDC secondary accession": "SRS5226318",
+                    "NCBI submission package": "Generic.1.0",
+                    "organism": "Harpegnathos saltator",
+                    "caste": "gamergate",
+                    "internal name": "gam.nb.e8b2",
+                    "tissue": "brain (minus optic lobes)",
+                    "colony type": "transition",
+                    "technology": "10x Genomics",
+                    "age": "d30",
+                    "source_name": "non-visual brain",
+                    "BioSampleModel": "Generic",
+                    "ENA-FIRST-PUBLIC": "2022-02-05",
+                    "ENA-LAST-UPDATE": "2022-02-05"
+                },
+                "experiments": {
+                    "SRX6666524": {
+                        "accession": "SRX6666524",
+                        "title": "GSM4013391: Day 30 transition - gamergate - rep3; Harpegnathos saltator; RNA-Seq",
+                        "platform": "ILLUMINA",
+                        "instrument": "NextSeq 500",
+                        "runs": {
+                            "SRR9917386": {
+                                "accession": "SRR9917386",
+                                "experiment": "SRX6666524",
+                                "study": "SRP217700",
+                                "sample": "SRS5226318",
+                                "title": "NextSeq 500 paired end sequencing; GSM4013391: Day 30 transition - gamergate - rep3; Harpegnathos saltator; RNA-Seq",
+                                "attributes": {
+                                    "ENA-STATUS": "PUBLIC",
+                                    "ENA-FIRST-PUBLIC": "2020-08-18",
+                                    "ENA-LAST-UPDATE": "2020-08-18",
+                                    "ENA-BASE-COUNT": 24017784595,
+                                    "ENA-SPOT-COUNT": 291248077
+                                },
+                                "files": {
+                                    "ftp": [
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "SRR9917386_1.fastq.gz",
+                                            "filetype": "fastq",
+                                            "filesize": 5385362591,
+                                            "filenumber": 1,
+                                            "md5": "bd3b589de2e8234b3b022eb536af0485",
+                                            "urltype": "ftp",
+                                            "url": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR991/006/SRR9917386/SRR9917386_1.fastq.gz"
+                                        },
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "SRR9917386_2.fastq.gz",
+                                            "filetype": "fastq",
+                                            "filesize": 9305196901,
+                                            "filenumber": 2,
+                                            "md5": "7dacd1cd573f8b1a40bb39364e6b210f",
+                                            "urltype": "ftp",
+                                            "url": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR991/006/SRR9917386/SRR9917386_2.fastq.gz"
+                                        }
+                                    ],
+                                    "aws": [
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "transition_gamergate3.R1.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "s3://sra-pub-src-14/SRR9917386/transition_gamergate3.R1.1"
+                                        },
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "transition_gamergate3.R2.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "s3://sra-pub-src-14/SRR9917386/transition_gamergate3.R2.1"
+                                        },
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "SRR9917386",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR9917386/SRR9917386"
+                                        },
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "SRR9917386.lite.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "s3://sra-pub-zq-3/SRR9917386/SRR9917386.lite.1"
+                                        }
+                                    ],
+                                    "gcp": [
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "SRR9917386.lite.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "gcp",
+                                            "url": "gs://sra-pub-zq-108/SRR9917386/SRR9917386.lite.1"
+                                        }
+                                    ],
+                                    "ncbi": [
+                                        {
+                                            "accession": "SRR9917386",
+                                            "filename": "SRR9917386.lite.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "ncbi",
+                                            "url": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos5/sra-pub-zq-16/SRR009/9917/SRR9917386/SRR9917386.lite.1"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

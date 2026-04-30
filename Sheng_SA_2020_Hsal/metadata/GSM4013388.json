@@ -1,0 +1,146 @@
+{
+    "GSM4013388": {
+        "accession": "GSM4013388",
+        "platform": {
+            "accession": "GPL22089",
+            "title": "Illumina NextSeq 500 (Harpegnathos saltator)"
+        },
+        "samples": {
+            "SRS5226315": {
+                "accession": "SRS5226315",
+                "title": "Day 30 transition - worker - rep6",
+                "organism": "Harpegnathos saltator",
+                "attributes": {
+                    "treatment": "none",
+                    "INSDC secondary accession": "SRS5226315",
+                    "NCBI submission package": "Generic.1.0",
+                    "organism": "Harpegnathos saltator",
+                    "caste": "worker",
+                    "internal name": "wor.nb.e13b2",
+                    "tissue": "brain (minus optic lobes)",
+                    "colony type": "transition",
+                    "technology": "10x Genomics",
+                    "age": "d30",
+                    "source_name": "non-visual brain",
+                    "BioSampleModel": "Generic",
+                    "ENA-FIRST-PUBLIC": "2022-02-05",
+                    "ENA-LAST-UPDATE": "2022-02-05"
+                },
+                "experiments": {
+                    "SRX6666521": {
+                        "accession": "SRX6666521",
+                        "title": "GSM4013388: Day 30 transition - worker - rep6; Harpegnathos saltator; RNA-Seq",
+                        "platform": "ILLUMINA",
+                        "instrument": "NextSeq 500",
+                        "runs": {
+                            "SRR9917383": {
+                                "accession": "SRR9917383",
+                                "experiment": "SRX6666521",
+                                "study": "SRP217700",
+                                "sample": "SRS5226315",
+                                "title": "NextSeq 500 paired end sequencing; GSM4013388: Day 30 transition - worker - rep6; Harpegnathos saltator; RNA-Seq",
+                                "attributes": {
+                                    "ENA-STATUS": "PUBLIC",
+                                    "ENA-FIRST-PUBLIC": "2020-08-18",
+                                    "ENA-LAST-UPDATE": "2020-08-18",
+                                    "ENA-BASE-COUNT": 20945144472,
+                                    "ENA-SPOT-COUNT": 249346958
+                                },
+                                "files": {
+                                    "ftp": [
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "SRR9917383_1.fastq.gz",
+                                            "filetype": "fastq",
+                                            "filesize": 4654715166,
+                                            "filenumber": 1,
+                                            "md5": "24f7b22e6507b68283bd38dd2ca2a447",
+                                            "urltype": "ftp",
+                                            "url": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR991/003/SRR9917383/SRR9917383_1.fastq.gz"
+                                        },
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "SRR9917383_2.fastq.gz",
+                                            "filetype": "fastq",
+                                            "filesize": 8728816529,
+                                            "filenumber": 2,
+                                            "md5": "33ed07b63c2d66307758ff14a344fc36",
+                                            "urltype": "ftp",
+                                            "url": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR991/003/SRR9917383/SRR9917383_2.fastq.gz"
+                                        }
+                                    ],
+                                    "aws": [
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "transition_worker6.R1.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "s3://sra-pub-src-14/SRR9917383/transition_worker6.R1.1"
+                                        },
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "transition_worker6.R2.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "s3://sra-pub-src-14/SRR9917383/transition_worker6.R2.1"
+                                        },
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "SRR9917383",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR9917383/SRR9917383"
+                                        },
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "SRR9917383.lite.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "aws",
+                                            "url": "s3://sra-pub-zq-3/SRR9917383/SRR9917383.lite.1"
+                                        }
+                                    ],
+                                    "gcp": [
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "SRR9917383.lite.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "gcp",
+                                            "url": "gs://sra-pub-zq-108/SRR9917383/SRR9917383.lite.1"
+                                        }
+                                    ],
+                                    "ncbi": [
+                                        {
+                                            "accession": "SRR9917383",
+                                            "filename": "SRR9917383.lite.1",
+                                            "filetype": "sra",
+                                            "filesize": null,
+                                            "filenumber": 1,
+                                            "md5": null,
+                                            "urltype": "ncbi",
+                                            "url": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos5/sra-pub-zq-16/SRR009/9917/SRR9917383/SRR9917383.lite.1"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

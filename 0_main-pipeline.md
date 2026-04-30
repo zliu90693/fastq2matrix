@@ -55,3 +55,8 @@
   ./2_make-ref.sh -p Sheng_SA_2020_Hsal -g Harpegnathos_saltator.gtf -f Harpegnathos_saltator.filtered.gtf -r Harpegnathos_saltator.fa -m H_sal_mkref_out -t 20
   ```
 - Rename fastq using [check_R1R2_rename.ipynb](./Sheng_SA_2020_Hsal/rename.ipynb)
+- Run Cellranger count using 3_cellranger-count.sh
+  ```bash
+  conda activate fastq2matrix
+  ./3_cellranger-count.sh -p Sheng_SA_2020_Hsal -l 20 -t H_sal_mkref_out -c false
+  ```
