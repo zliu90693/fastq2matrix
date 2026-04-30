@@ -2,7 +2,7 @@
 
 ## Zhang_iScience_2022_Amel
 - Download reference genome and annotation(GTF) from ensembl
-- Check reference genome using ref-inspection.ipynb
+- Check reference genome using [ref-inspection.ipynb](./Zhang_iScience_2022_Amel/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
   - the CDS and exon start sites are different? Yes
 - Install fastq using 1_get-fastq.sh
@@ -18,7 +18,7 @@
   ./2_make-ref.sh -p Zhang_iScience_2022_Amel -g Apis_mellifera.Amel_HAv3.1.62.gtf -f Apis_mellifera.Amel_HAv3.1.62.filtered.gtf -r Apis_mellifera.Amel_HAv3.1.dna.toplevel.fa -m A_mel_mkref_out -t 20
   ```
 
-- Distinguish R1/R2 fastq and rename fastq using check_R1R2_rename.ipynb
+- Distinguish R1/R2 fastq and rename fastq using [check_R1R2_rename.ipynb](./Zhang_iScience_2022_Amel/check_R1R2_rename.ipynb)
 - Run Cellranger count using 3_cellranger-count.sh
   ```bash
   conda activate fastq2matrix
@@ -38,10 +38,10 @@
 
 
 ## Sheng_SA_2020_Hsal
-- Download reference genome and annotation(GTF) from ensembl
-- Check reference genome using ref-inspection.ipynb
-  - mitochondrial sequences exist? <mark style="background: #FF5582A6;">Uncertain</mark>
-  - the CDS and exon start sites are different? <mark style="background: #FF5582A6;">Uncertain</mark>
+- The *H. saltator* genome and annotation in ensembl do not include mitochondria. Therefore, fasta and GTF containing mitochondria were generated beforehand using the [Mito_Assemble project](https://github.com/zliu90693/Mito_Assemble).
+- Check reference genome using [ref-inspection.ipynb](./Sheng_SA_2020_Hsal/ref-inspection.ipynb)
+  - mitochondrial sequences exist? Yes
+  - the CDS and exon start sites are different? Yes
 - Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
   - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
@@ -49,3 +49,9 @@
     conda activate kingfisher
     ./1_get-fastq.sh -p Sheng_SA_2020_Hsal -j 12 -x 5 -s 5 -t 8 -z 20
     ```
+- Make index to ref data
+  ```bash
+  conda activate fastq2matrix
+  ./2_make-ref.sh -p Sheng_SA_2020_Hsal -g Harpegnathos_saltator.gtf -f Harpegnathos_saltator.filtered.gtf -r Harpegnathos_saltator.fa -m H_sal_mkref_out -t 20
+  ```
+- Rename fastq using [check_R1R2_rename.ipynb](./Sheng_SA_2020_Hsal/rename.ipynb)
