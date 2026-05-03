@@ -128,7 +128,7 @@ mkdir -p .tmp
 log "STEP 1: remove transcript_id \"\""
 check_pattern "Before step 1" 'transcript_id "";' "$gtf_name"
 sed 's/transcript_id ""; //' "$gtf_name" > ".tmp/tmp.gtf"
-check_pattern "After step 1" 'transcript_id "";' "$gtf_name"
+check_pattern "After step 1" 'transcript_id "";' ".tmp/tmp.gtf"
 log "STEP 1 ended"
 
 # > tmp1.gtf

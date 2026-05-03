@@ -1,6 +1,7 @@
 **Note: To run the bash scripts in this .md file, you need to download the Markdown Execute plugin.**
 
 ## Zhang_iScience_2022_Amel
+`branch main`
 - Download reference genome and annotation(GTF) from ensembl
 - Check reference genome using [ref-inspection.ipynb](./Zhang_iScience_2022_Amel/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
@@ -59,4 +60,15 @@
   ```bash
   conda activate fastq2matrix
   ./3_cellranger-count.sh -p Sheng_SA_2020_Hsal -l 20 -t H_sal_mkref_out -c false
+  ```
+
+## Acer
+- Download reference genome and annotation(GTF) from Refseq
+- Check reference genome using [ref-inspection.ipynb](./Acer/ref-inspection.ipynb)
+  - mitochondrial sequences exist? Yes
+  - the CDS and exon start sites are different? Uncertain
+- *A. cerana* data is provided by this project itself.
+- Make index to ref data
+  ```bash
+  ./2_make-ref.sh -p Acer -g GCF_029169275.1_AcerK_1.0_genomic.gtf -f GCF_029169275.1_AcerK_1.0_genomic.filtered.gtf -r GCF_029169275.1_AcerK_1.0_genomic.fna -m A_cer_mkref_out -t 20
   ```
