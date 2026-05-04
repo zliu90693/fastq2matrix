@@ -64,11 +64,12 @@
 
 ## Acer
 - Download reference genome and annotation(GTF) from Refseq
-- Check reference genome using [ref-inspection.ipynb](./Acer/ref-inspection.ipynb)
+- Check reference genome and <mark style="background: #FF5582A6;">adjust the format of the GTF</mark> using [ref-inspection.ipynb](./Acer/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
-  - the CDS and exon start sites are different? Uncertain
+  - the CDS and exon start sites are different? Yes
 - *A. cerana* data is provided by this project itself.
 - Make index to ref data
   ```bash
-  ./2_make-ref.sh -p Acer -g GCF_029169275.1_AcerK_1.0_genomic.gtf -f GCF_029169275.1_AcerK_1.0_genomic.filtered.gtf -r GCF_029169275.1_AcerK_1.0_genomic.fna -m A_cer_mkref_out -t 20
+  ./2_make-ref.sh -p Acer -g GCF_029169275.1_AcerK_1.0_genomic_neat.gtf -f GCF_029169275.1_AcerK_1.0_genomic_neat.filtered.gtf -r GCF_029169275.1_AcerK_1.0_genomic.fna -m A_cer_mkref_out -t 20
   ```
+

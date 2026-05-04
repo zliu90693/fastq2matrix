@@ -3,7 +3,7 @@
 call MAKE_REFERENCE(
     genome_names  = ["A_cer_mkref_out"],
     fasta_files   = ["/home/liuzhiyu/Projects/neo_caste/fastq2matrix/Acer/ref/GCF_029169275.1_AcerK_1.0_genomic.fna"],
-    gtf_files     = ["/home/liuzhiyu/Projects/neo_caste/fastq2matrix/Acer/ref/GCF_029169275.1_AcerK_1.0_genomic.filtered.gtf"],
+    gtf_files     = ["/home/liuzhiyu/Projects/neo_caste/fastq2matrix/Acer/ref/GCF_029169275.1_AcerK_1.0_genomic_neat.filtered.gtf"],
     ref_version   = null,
     mkref_version = "cellranger-10.0.0",
     num_threads   = 20,
