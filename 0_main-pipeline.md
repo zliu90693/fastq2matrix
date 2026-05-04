@@ -77,7 +77,7 @@
   ```
 - Make index to ref data
   ```bash
-  ./2_make-ref.sh -p Acer -g GCF_029169275.1_AcerK_1.0_genomic_neat.gtf -f GCF_029169275.1_AcerK_1.0_genomic_neat.filtered.gtf -r GCF_029169275.1_AcerK_1.0_genomic.fna -m A_cer_mkref_out -t 20
+  ./2_make-ref.sh -p Acer -g GCF_029169275.1_fixed.gtf -f GCF_029169275.1_fixed.filtered.gtf -r GCF_029169275.1_AcerK_1.0_genomic.fna -m A_cer_mkref_out -t 20
   ```
 - Run Cellranger count using 3_cellranger-count.sh
   ```bash
