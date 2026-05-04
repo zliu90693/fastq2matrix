@@ -67,9 +67,20 @@
 - Check reference genome and <mark style="background: #FF5582A6;">adjust the format of the GTF</mark> using [ref-inspection.ipynb](./Acer/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
   - the CDS and exon start sites are different? Yes
-- *A. cerana* data is provided by this project itself.
+- *A. cerana* data is provided by this project itself, make link:
+  ```bash
+  cd ./Acer/fastq
+  ln -s /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/queen_rep1 queen_rep1
+  ln -s /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/worker_rep1 worker_rep1
+  ln -s /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/worker_rep2 worker_rep2
+  cd -
+  ```
 - Make index to ref data
   ```bash
   ./2_make-ref.sh -p Acer -g GCF_029169275.1_AcerK_1.0_genomic_neat.gtf -f GCF_029169275.1_AcerK_1.0_genomic_neat.filtered.gtf -r GCF_029169275.1_AcerK_1.0_genomic.fna -m A_cer_mkref_out -t 20
   ```
-
+- Run Cellranger count using 3_cellranger-count.sh
+  ```bash
+  conda activate fastq2matrix
+  ./3_cellranger-count.sh -p Acer -l 20 -t A_cer_mkref_out -c false
+  ```
