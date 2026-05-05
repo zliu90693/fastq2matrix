@@ -69,13 +69,28 @@ log() {
 mkdir -p "./${project_name}/cellranger-count-out"
 cd "./${project_name}/cellranger-count-out"
 
+get_sample_prefixes() {
+    local dir="$1"
+    if [ ! -d "$dir" ]; then
+        echo "Error: '$dir' is not a directory." >&2
+        return 1
+    fi
+
+    # 遍历目录下所有 .fastq.gz 文件，提取前缀，排序去重，用逗号拼接
+    for f in "$dir"/*.fastq.gz; do
+        file="${f##*/}"          # 去掉路径，只保留文件名
+        echo "${file%%_*}"       # 取第一个 '_' 之前的部分
+    done | sort -u | paste -sd,
+}
+
 for dir in ../fastq/*; do
+    sample_prefixes=$(get_sample_prefixes $dir)
     GSM=$(basename "$dir")
     log "start processing ${GSM}"
     cellranger count --localcores "$localcores" \
         --id="$GSM" \
         --fastqs="../fastq/${GSM}" \
-        --sample="$GSM" \
+        --sample="$sample_prefixes" \
         --transcriptome="../ref/${transcriptome_name}" \
         --create-bam "$create_bam"
     log "${GSM} processing completed" # single GSM about 4.5 hour

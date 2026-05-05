@@ -79,6 +79,7 @@
   ```bash
   ./2_make-ref.sh -p Acer -g GCF_029169275.1_fixed.gtf -f GCF_029169275.1_fixed.filtered.gtf -r GCF_029169275.1_AcerK_1.0_genomic.fna -m A_cer_mkref_out -t 20
   ```
+- Rename fastq using [rename.ipynb](./Acer/rename.ipynb)
 - Run Cellranger count using 3_cellranger-count.sh
   ```bash
   conda activate fastq2matrix
