@@ -93,3 +93,18 @@
   - the CDS and exon start sites are different? <mark style="background: #FF5582A6;">Uncertain</mark>
 - Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
+  - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
+    ```bash
+    conda activate kingfisher
+    ./1_get-fastq.sh -p Jones_NEE_2023_Lzep -j 12 -x 5 -s 5 -t 8 -z 20
+    ```
+- Make index to ref data
+  ```bash
+  ./2_make-ref.sh -p Jones_NEE_2023_Lzep -g Lasioglossum_zephyrus.gtf -f Lasioglossum_zephyrus.filtered.gtf -r Lasioglossum_zephyrus.fasta -m L_zep_mkref_out -t 20
+  ```
+- Rename fastq using [rename.ipynb](./Jones_NEE_2023_Lzep/rename.ipynb)
+- Run Cellranger count using 3_cellranger-count.sh
+  ```bash
+  conda activate fastq2matrix
+  ./3_cellranger-count.sh -p Jones_NEE_2023_Lzep -l 20 -t L_zep_mkref_out -c false
+  ```
