@@ -85,3 +85,11 @@
   conda activate fastq2matrix
   ./3_cellranger-count.sh -p Acer -l 20 -t A_cer_mkref_out -c false
   ```
+
+## Jones_NEE_2023_Lzep
+- The *L. zephyrus* genome and annotation in [dnazoo](https://dnazoo.s3.wasabisys.com/index.html?prefix=Lasioglossum_zephyrum/) do not include mitochondria, Therefore, fasta and GTF containing mitochondria were generated beforehand using the [Mito_Assemble project](https://github.com/zliu90693/Mito_Assemble).
+- Check reference genome using [ref-inspection.ipynb](./Jones_NEE_2023_Lzep/ref-inspection.ipynb)
+  - mitochondrial sequences exist? Yes
+  - the CDS and exon start sites are different? <mark style="background: #FF5582A6;">Uncertain</mark>
+- Install fastq using 1_get-fastq.sh
+  - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
