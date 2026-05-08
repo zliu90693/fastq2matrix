@@ -5,7 +5,7 @@
 - Download reference genome and annotation(GTF) from ensembl
 - Check reference genome using [ref-inspection.ipynb](./Zhang_iScience_2022_Amel/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
-  - the CDS and exon start sites are different? Yes
+  - Is the UTR deletion rate acceptable? Yes
 - Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
   - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
@@ -42,7 +42,7 @@
 - The *H. saltator* genome and annotation in ensembl do not include mitochondria. Therefore, fasta and GTF containing mitochondria were generated beforehand using the [Mito_Assemble project](https://github.com/zliu90693/Mito_Assemble).
 - Check reference genome using [ref-inspection.ipynb](./Sheng_SA_2020_Hsal/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
-  - the CDS and exon start sites are different? Yes
+  - Is the UTR deletion rate acceptable? Yes
 - Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
   - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
@@ -66,7 +66,7 @@
 - Download reference genome and annotation(GTF) from Refseq
 - Check reference genome and <mark style="background: #FF5582A6;">adjust the format of the GTF</mark> using [ref-inspection.ipynb](./Acer/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
-  - the CDS and exon start sites are different? Yes
+  - Is the UTR deletion rate acceptable? Yes
 - *A. cerana* data is provided by this project itself, make link:
   ```bash
   cd ./Acer/fastq
@@ -85,12 +85,23 @@
   conda activate fastq2matrix
   ./3_cellranger-count.sh -p Acer -l 20 -t A_cer_mkref_out -c false
   ```
+- Remove ambient RNA using 4_cellbender-removebackground.sh
+  ```bash
+  conda activate cellbender
+  ./4_cellbender-removebackground.sh -p Acer -c 20
+  ```
+- Remove doublet using 5_remove-doublet and run_scDblFinder.R
+  ```bash
+  conda activate fastq2matrix
+  ./5_remove-doublet.sh -p Acer
+  ```
 
 ## Jones_NEE_2023_Lzep
 - The *L. zephyrus* genome and annotation in [dnazoo](https://dnazoo.s3.wasabisys.com/index.html?prefix=Lasioglossum_zephyrum/) do not include mitochondria, Therefore, fasta and GTF containing mitochondria were generated beforehand using the [Mito_Assemble project](https://github.com/zliu90693/Mito_Assemble).
 - Check reference genome using [ref-inspection.ipynb](./Jones_NEE_2023_Lzep/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
-  - the CDS and exon start sites are different? <mark style="background: #FF5582A6;">Uncertain</mark>
+  - Is the UTR deletion rate acceptable? <mark style="background: #FF5582A6;">No</mark>
+  - Manually annotate UTRs in the GTF file using the [UTR_anno project](https://github.com/zliu90693/UTR_anno)
 - Install fastq using 1_get-fastq.sh
   - Get SRR list (Accession List) from NCBI manually, Create file ./metadata/SRR_list
   - download .sra file using Accession List & transfer .sra to .fastq & make link from storage server to current server
