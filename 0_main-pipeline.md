@@ -59,7 +59,7 @@
 - Run Cellranger count using 3_cellranger-count.sh
   ```bash
   conda activate fastq2matrix
-  ./3_cellranger-count.sh -p Sheng_SA_2020_Hsal -l 20 -t H_sal_mkref_out -c false
+  ./3_cellranger-count.sh -p Sheng_SA_2020_Hsal -l 20 -t H_sal_mkref_out -c true
   ```
 
 ## Acer
@@ -117,5 +117,7 @@
 - Run Cellranger count using 3_cellranger-count.sh
   ```bash
   conda activate fastq2matrix
-  ./3_cellranger-count.sh -p Jones_NEE_2023_Lzep -l 20 -t L_zep_mkref_out -c false
+  ./3_cellranger-count.sh -p Jones_NEE_2023_Lzep -l 20 -t L_zep_mkref_out -c true
   ```
+  ↑ 20260511 夜
+  ↑ 20260513 上午(12日整天用于运行fastq_pair)
