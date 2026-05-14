@@ -34,7 +34,8 @@
   ```
 - Remove doublet using 5_remove-doublet and run_scDblFinder.R
   ```bash
-  
+  conda activate fastq2matrix
+  ./5_remove-doublet.sh -p Zhang_iScience_2022_Amel
   ```
 
 
@@ -61,6 +62,12 @@
   conda activate fastq2matrix
   ./3_cellranger-count.sh -p Sheng_SA_2020_Hsal -l 20 -t H_sal_mkref_out -c true
   ```
+- Remove ambient RNA using 4_cellbender-removebackground.sh
+  ```bash
+  conda activate cellbender
+  ./4_cellbender-removebackground.sh -p Sheng_SA_2020_Hsal -c 20
+  ```
+  ↑ 20260514
 
 ## Acer
 - Download reference genome and annotation(GTF) from Refseq
@@ -96,7 +103,7 @@
   ./5_remove-doublet.sh -p Acer
   ```
 
-## Jones_NEE_2023_Lzep
+## ~~Jones_NEE_2023_Lzep~~
 - The *L. zephyrus* genome and annotation in [dnazoo](https://dnazoo.s3.wasabisys.com/index.html?prefix=Lasioglossum_zephyrum/) do not include mitochondria, Therefore, fasta and GTF containing mitochondria were generated beforehand using the [Mito_Assemble project](https://github.com/zliu90693/Mito_Assemble).
 - Check reference genome using [ref-inspection.ipynb](./Jones_NEE_2023_Lzep/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
@@ -119,5 +126,4 @@
   conda activate fastq2matrix
   ./3_cellranger-count.sh -p Jones_NEE_2023_Lzep -l 20 -t L_zep_mkref_out -c true
   ```
-  ↑ 20260511 夜
-  ↑ 20260513 上午(12日整天用于运行fastq_pair)
+- A critical issue was encountered during the Cell Ranger count analysis, characterized by an extremely low proportion of reads mapping to the *L. zephyrus* genome—and an even lower proportion mapping to the transcriptome—resulting in a recovered cell count of only approximately 700 per sample. Following consultation with the original authors of the published study, it was determined that this issue likely stemmed from errors during the library preparation process; consequently, this specific scRNA-seq dataset has been excluded from all subsequent analyses.
