@@ -77,9 +77,11 @@
 - *A. cerana* data is provided by this project itself, make link:
   ```bash
   cd ./Acer/fastq
-  ln -s /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/queen_rep1 queen_rep1
-  ln -s /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/worker_rep1 worker_rep1
-  ln -s /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/worker_rep2 worker_rep2
+  ln -sf /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/queen_rep1 queen_rep1
+  ln -sf /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/worker_rep1 worker_rep1
+  ln -sf /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/worker_rep2 worker_rep2
+  ln -sf /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/drone_rep1 drone_rep1
+  ln -sf /data/share/data/Zhou_lab_seq_data/20260401_lzy_sc_fastq/Acer/drone_rep2 drone_rep2
   cd -
   ```
 - Make index to ref data
