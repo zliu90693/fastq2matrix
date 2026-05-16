@@ -1,7 +1,6 @@
 **Note: To run the bash scripts in this .md file, you need to download the Markdown Execute plugin.**
 
 ## Zhang_iScience_2022_Amel
-`branch main`
 - Download reference genome and annotation(GTF) from ensembl
 - Check reference genome using [ref-inspection.ipynb](./Zhang_iScience_2022_Amel/ref-inspection.ipynb)
   - mitochondrial sequences exist? Yes
@@ -67,7 +66,12 @@
   conda activate cellbender
   ./4_cellbender-removebackground.sh -p Sheng_SA_2020_Hsal -c 20
   ```
-  ↑ 20260514
+- Remove doublet using 5_remove-doublet and run_scDblFinder.R
+  ```bash
+  conda activate fastq2matrix
+  ./5_remove-doublet.sh -p Sheng_SA_2020_Hsal
+  ```
+  <!-- `↑ 20260514 20260401_download_fastq` -->
 
 ## Acer
 - Download reference genome and annotation(GTF) from Refseq
@@ -104,6 +108,7 @@
   conda activate fastq2matrix
   ./5_remove-doublet.sh -p Acer
   ```
+  `20260514 Acer_c_count`
 
 ## ~~Jones_NEE_2023_Lzep~~
 - The *L. zephyrus* genome and annotation in [dnazoo](https://dnazoo.s3.wasabisys.com/index.html?prefix=Lasioglossum_zephyrum/) do not include mitochondria, Therefore, fasta and GTF containing mitochondria were generated beforehand using the [Mito_Assemble project](https://github.com/zliu90693/Mito_Assemble).
