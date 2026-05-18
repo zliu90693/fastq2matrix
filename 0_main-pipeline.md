@@ -108,7 +108,7 @@
   conda activate fastq2matrix
   ./5_remove-doublet.sh -p Acer
   ```
-  `20260514 Acer_c_count`
+  <!-- `20260514 Acer_c_count` -->
 
 ## ~~Jones_NEE_2023_Lzep~~
 - The *L. zephyrus* genome and annotation in [dnazoo](https://dnazoo.s3.wasabisys.com/index.html?prefix=Lasioglossum_zephyrum/) do not include mitochondria, Therefore, fasta and GTF containing mitochondria were generated beforehand using the [Mito_Assemble project](https://github.com/zliu90693/Mito_Assemble).
